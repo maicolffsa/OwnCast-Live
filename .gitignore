@@ -1,0 +1,37 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# ignore IDE specific files
+.idea/
+*.iml
+
+# Dependency directories (remove the comment below to include it)
+vendor/
+
+#owncast specific
+/config*.yaml
+/stats.json
+owncast
+webroot/thumbnail.jpg
+webroot/preview.gif
+webroot/hls
+webroot/static/content.md
+hls/
+dist/
+data/
+transcoder.log
+chat.db
+.yp.key
+
+!webroot/js/web_modules/**/dist
+!core/data

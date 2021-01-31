@@ -1,0 +1,234 @@
+/*
+Specific styles for main app layout.
+May have overrides for other components with own stylesheets.
+*/
+
+/* variables */
+:root {
+  --header-height: 3.5em;
+  --right-col-width: 24em;
+  --video-container-height: calc((9 / 16) * 100vw);
+  --header-bg-color: rgba(20,0,40,1);
+  --user-image-width: 10em;
+}
+
+html {
+  font-size: 14px;
+  scrollbar-width: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.scrollbar-hidden {
+  scrollbar-width: none; /* moz only */
+}
+
+
+#app-container * {
+  transition: all .25s;
+}
+
+button[disabled] {
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* accessibility things */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+
+header {
+  height: var(--header-height);
+  background-color: var(--header-bg-color);
+  display: block;
+}
+
+#logo-container {
+  background-size: 1.35em;
+  padding: 1.15rem;
+  background-image: url(/img/logo.svg);
+}
+
+#chat-toggle {
+  min-width: 3rem;
+}
+
+#user-info-change {
+  display: none;
+}
+
+
+#stream-info span {
+  font-size: .70rem;
+}
+#stream-viewer-count {
+  display: none;
+}
+.online #stream-viewer-count {
+  display: inline;
+}
+
+
+/* ************************************************ */
+
+#video-container {
+  height: var(--video-container-height);
+  margin-top: var(--header-height);
+  position: relative;
+  width: 100%;
+
+  min-height: 480px;
+  max-height: calc(100vh - var(--header-height) - 3rem);
+  background-size: 30%;
+}
+#video-container #video {
+  transition: opacity .5s;
+  opacity: 0;
+  pointer-events: none;
+}
+.online #video-container #video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#app-container .custom-thumbnail-image {
+  transition: opacity 2s;
+}
+
+/* *********** overrides when chat is off ***************************** */
+
+
+.no-chat footer {
+  justify-content: center;
+}
+
+.no-chat #chat-toggle {
+  opacity: .75;
+}
+
+.no-chat #chat-container-wrap {
+  display: none;
+}
+
+/* *********** overrides when chat is on ***************************** */
+
+.chat {
+  --content-width: calc(100vw - var(--right-col-width));
+}
+.chat #chat-container-wrap {
+  display: block;
+}
+
+.chat #video-container,
+.chat #stream-info,
+.chat #user-content {
+  width: var(--content-width);
+}
+
+.chat #video-container {
+  height: calc((9 / 16) * var(--content-width));
+}
+
+.short-wide.chat #video-container {
+  height: calc(100vh - var(--header-height) - 3rem);
+  min-height: auto;
+}
+
+
+/* *********** single col layout ***************************** */
+
+.single-col {
+  --right-col-width: 0px;
+  --video-container-height: calc((9 / 16) * 100vw);
+}
+.single-col main {
+  position: fixed;
+  width: 100%;
+  z-index: 40;
+}
+.single-col #chat-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+.single-col.chat #video-container,
+.single-col.no-chat #video-container,
+.single-col #video-container #video,
+.single-col.chat #video-container #video {
+  width: 100vw;
+  height: var(--video-container-height);
+  min-height: 212px;
+}
+.single-col #user-content,
+.single-col #chat-container-wrap {
+  margin-top: calc(var(--video-container-height) + var(--header-height) + 1rem);
+}
+.single-col #user-content .user-content {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.single-col.chat #user-content {
+  display: none;
+}
+.single-col #messages-container {
+  flex-grow: 2;
+  margin-top: calc(var(--video-container-height));
+}
+.single-col #message-input-container {
+  width: 100%;
+}
+
+.single-col #stream-info {
+  height: 0;
+  padding: 0;
+}
+.single-col #stream-info span {
+  display: none;
+}
+
+.single-col #message-input-wrap {
+  max-height: 3em;
+}
+
+@media screen and (max-height: 500px) {
+  .single-col.touch-screen:not(.touch-keyboard-active) {
+    --header-height: 0px;
+  }
+  .single-col.touch-screen:not(.touch-keyboard-active) header {
+    display: none;
+  }
+}
+
+
+/* ************************************************8 */
+
+
+@media screen and (max-width: 860px) {
+  :root {
+    --right-col-width: 20em;
+    --user-image-width: 6em;
+  }
+  #video-container {
+    min-height: 240px;
+  }
+  .instance-title {
+    font-size: 1rem;
+  }
+
+}
