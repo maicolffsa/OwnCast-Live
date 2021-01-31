@@ -1,0 +1,41 @@
+# See https://owncast.online/docs/configuration/ for more details
+
+instanceDetails:
+  name: PiuraPlusTV Live
+  title: PiuraPlusTV Live
+  summary: "La Nueva Plataforma de Streaming de PiuraPlusTV"
+
+  logo: /img/PPT.png
+
+  tags: 
+    - music
+    - software
+    - streaming
+
+  # https://owncast.online/docs/configuration/#external-links
+  # for full list of supported social links.  All optional.
+  socialHandles:
+    - platform: github
+      url: http://github.com/owncast/owncast
+    - platform: facebook
+      url: http://github.com/owncast/owncast
+    - platform: instagram
+      url: http://github.com/owncast/owncast  
+
+videoSettings:
+  # Change this value and keep it secure.  Treat it like a password to your live stream.
+  streamingKey: abc123
+
+  streamQualities:
+    - medium:
+      videoBitrate: 1200
+      encoderPreset: veryfast
+
+# Set to true if you don't want the service checking for future releases.
+disableUpgradeChecks: false
+
+# Off by default.  You can optionally list yourself in the Owncast directory.
+# Make sure your instanceURL is the public URL to your Owncast instance.
+yp:
+  enabled: false
+  instanceURL: https://stream.myserver.org
