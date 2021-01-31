@@ -18,9 +18,9 @@ instanceDetails:
     - platform: github
       url: http://github.com/owncast/owncast
     - platform: facebook
-      url: http://github.com/owncast/owncast
+      url: https://www.facebook.com/piuraplustv
     - platform: instagram
-      url: http://github.com/owncast/owncast  
+      url: https://www.instagram.com/piuraplustv/  
 
 videoSettings:
   # Change this value and keep it secure.  Treat it like a password to your live stream.
