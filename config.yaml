@@ -29,13 +29,8 @@ videoSettings:
   streamQualities:
   
     - medium:
-      
-      videoBitrate: 1200
+      videoBitrate: 1000
       scaledWidth: 1080
-      encoderPreset: veryfast
-
-    - high:
-      videoBitrate: 1600
       encoderPreset: veryfast
  
 
