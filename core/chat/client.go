@@ -74,7 +74,7 @@ func (c *Client) write(msg models.ChatEvent) {
 	case c.ch <- msg:
 	default:
 		_server.removeClient(c)
-		_server.err(fmt.Errorf("client %s is disconnected", c.ClientID))
+		_server.err(fmt.Errorf("El Usuario %s se a desconectado", c.ClientID))
 	}
 }
 
@@ -115,7 +115,7 @@ func (c *Client) listenWrite() {
 }
 
 func (c *Client) handleClientSocketError(err error) {
-	log.Warnln("Websocket client error: ", err.Error())
+	log.Warnln("Error al conectar al Websocket client: ", err.Error())
 	_server.removeClient(c)
 }
 

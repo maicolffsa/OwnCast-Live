@@ -93,7 +93,7 @@ func (s *server) onConnection(ws *websocket.Conn) {
 func (s *server) Listen() {
 	http.Handle(s.pattern, websocket.Handler(s.onConnection))
 
-	log.Tracef("Starting the websocket listener on: %s", s.pattern)
+	log.Tracef("El Servidor websocket Se a iniciado en el puerto: %s", s.pattern)
 
 	for {
 		select {
@@ -142,7 +142,7 @@ func (s *server) removeClient(c *Client) {
 
 		s.listener.ClientRemoved(c.socketID)
 
-		log.Tracef("The client was connected for %s and sent %d messages (%s)", time.Since(c.ConnectedAt), c.MessageCount, c.ClientID)
+		log.Tracef("El Usuario estaba conectado por %s y envió %d mensajes (%s)", time.Since(c.ConnectedAt), c.MessageCount, c.ClientID)
 	}
 	l.Unlock()
 }
@@ -152,7 +152,7 @@ func (s *server) sendWelcomeMessageToClient(c *Client) {
 		// Add an artificial delay so people notice this message come in.
 		time.Sleep(7 * time.Second)
 
-		initialChatMessageText := fmt.Sprintf("Welcome to %s! %s", config.Config.InstanceDetails.Title, config.Config.InstanceDetails.Summary)
+		initialChatMessageText := fmt.Sprintf("Bienvenidos sean todos a  %s! %s", config.Config.InstanceDetails.Title, config.Config.InstanceDetails.Summary)
 		initialMessage := models.ChatEvent{ClientID: "owncast-server", Author: config.Config.InstanceDetails.Name, Body: initialChatMessageText, ID: "initial-message-1", MessageType: "SYSTEM", Visible: true, Timestamp: time.Now()}
 		c.write(initialMessage)
 	}()

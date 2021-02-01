@@ -35,7 +35,7 @@ func Setup(listener models.ChatListener) {
 // Start starts the chat server.
 func Start() error {
 	if _server == nil {
-		return errors.New("chat server is nil")
+		return errors.New("el servidor de chat es nulo")
 	}
 
 	ticker := time.NewTicker(30 * time.Second)
@@ -47,7 +47,7 @@ func Start() error {
 
 	_server.Listen()
 
-	return errors.New("chat server failed to start")
+	return errors.New("el servidor de chat no pudo iniciarse")
 }
 
 // SendMessage sends a message to all.
