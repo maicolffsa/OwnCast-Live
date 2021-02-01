@@ -29,23 +29,16 @@ videoSettings:
   streamQualities:
     - low:
       videoBitrate: 800
-      scaledWidth: 600
-      audioPassthrough: true
+      scaledWidth: 640
       encoderPreset: veryfast
-      
+
     - medium:
       videoBitrate: 1200
-      encoderPreset: fast
-     
+      encoderPreset: veryfast
+
     - high:
-      videoBitrate: 2000
-      framerate: 30
-      encoderPreset: fast
-      
-    - resized:
-      videoBitrate: 1000
-      encoderPreset: superfast
-      scaledWidth: 600  
+      videoBitrate: 1600
+      encoderPreset: veryfast
  
 
 # Set to true if you don't want the service checking for future releases.
