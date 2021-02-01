@@ -30,7 +30,7 @@ videoSettings:
   
     - medium:
       videoBitrate: 1000
-      scaledWidth: 1080
+      scaledWidth: 1440
       encoderPreset: veryfast
  
 
