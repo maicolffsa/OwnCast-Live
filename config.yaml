@@ -27,13 +27,11 @@ videoSettings:
   streamingKey: abc123
 
   streamQualities:
-    - low:
-      videoBitrate: 800
-      scaledWidth: 720
-      encoderPreset: veryfast
-
+  
     - medium:
+      
       videoBitrate: 1200
+      scaledWidth: 720
       encoderPreset: veryfast
 
     - high:
