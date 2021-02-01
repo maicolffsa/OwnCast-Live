@@ -29,7 +29,7 @@ videoSettings:
   streamQualities:
     - low:
       videoBitrate: 800
-      scaledWidth: 640
+      scaledWidth: 720
       encoderPreset: veryfast
 
     - medium:
