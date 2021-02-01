@@ -40,15 +40,13 @@ videoSettings:
     - high:
       videoBitrate: 2000
       framerate: 30
-      encoderPreset: faster
+      encoderPreset: fast
       
-     - resized:
+    - resized:
       videoBitrate: 1000
       encoderPreset: superfast
       scaledWidth: 600  
-  
-  files:
-     maxNumberInPlaylist: 4
+ 
 
 # Set to true if you don't want the service checking for future releases.
 disableUpgradeChecks: false
@@ -56,5 +54,5 @@ disableUpgradeChecks: false
 # Off by default.  You can optionally list yourself in the Owncast directory.
 # Make sure your instanceURL is the public URL to your Owncast instance.
 yp:
-  enabled: true
+  enabled: false
   instanceURL: https://live.piuraplustv.com
