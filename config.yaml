@@ -8,7 +8,7 @@ instanceDetails:
   logo: /img/PPT.png
 
   tags: 
-    - music
+    - musica
     - software
     - streaming
 
@@ -27,9 +27,28 @@ videoSettings:
   streamingKey: abc123
 
   streamQualities:
+    - low:
+      videoBitrate: 800
+      scaledWidth: 600
+      audioPassthrough: true
+      encoderPreset: veryfast
+      
     - medium:
       videoBitrate: 1200
-      encoderPreset: veryfast
+      encoderPreset: fast
+     
+    - high:
+      videoBitrate: 2000
+      framerate: 30
+      encoderPreset: faster
+      
+     - resized:
+      videoBitrate: 1000
+      encoderPreset: superfast
+      scaledWidth: 600  
+  
+  files:
+     maxNumberInPlaylist: 4
 
 # Set to true if you don't want the service checking for future releases.
 disableUpgradeChecks: false
@@ -37,5 +56,5 @@ disableUpgradeChecks: false
 # Off by default.  You can optionally list yourself in the Owncast directory.
 # Make sure your instanceURL is the public URL to your Owncast instance.
 yp:
-  enabled: false
-  instanceURL: https://stream.myserver.org
+  enabled: true
+  instanceURL: https://live.piuraplustv.com
